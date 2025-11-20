@@ -1,0 +1,244 @@
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommandations - Vive les arbres</title>
+    <link rel="icon" type="image/png" href="leaf-1304786_960_720.webp"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="index2.css"/>
+    <script src="index.js"></script>
+    <style>
+        /* Styles spécifiques à cette page */
+        .recommendations-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 1000px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .category {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+        .category h2 {
+            font-family: 'Playfair Display', serif;
+            color: #2e7d32;
+            border-bottom: 2px solid #2e7d32;
+            padding-bottom: 5px;
+            text-align: center;
+        }
+        .recommendation {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .recommendation img {
+            width: 100px;
+            height: auto;
+            margin-right: 20px;
+            border-radius: 5px;
+        }
+        .recommendation-content h3 {
+            margin: 0 0 5px 0;
+            color: #2e7d32;
+        }
+        .recommendation-content p {
+            margin: 0;
+            color: #4a7a4a;
+            font-style: italic;
+        }
+        .back-button {
+            display: inline-block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #2e7d32;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: 600;
+        }
+        .back-button:hover {
+            background-color: #1b5e20;
+        }
+        
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .filter-btn {
+            padding: 8px 16px;
+            background-color: #2e7d32;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .filter-btn:hover {
+            background-color: #1b5e20;
+        }
+
+        .filter-btn.active {
+            background-color: #4caf50;
+        }
+
+        /* Animation des cartes */
+        .recommendation {
+            transition: opacity 0.5s, transform 0.5s;
+        }
+        /* Conteneur pour l'effet de zoom */
+        .zoom-container {
+            display: inline-block;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        /* Conteneur pour l'image zoomée (au premier plan) */
+        .zoomed-img {
+            position: absolute;
+            z-index: 100;
+            pointer-events: none; /* Permet à la souris de passer "à travers" */
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+
+        /* Style des images dans les recommandations */
+        .recommendation img {
+            width: 100px;
+            height: auto;
+            margin-right: 20px;
+            border-radius: 5px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, z-index 0.3s ease;
+        }
+
+        /* Espace réservé pour éviter les sauts de layout */
+        .recommendation {
+            min-height: 120px; /* Ajuste selon la hauteur de tes cartes */
+        }
+        /* Style de base pour les images des recommandations */
+        .recommendation-img {
+            width: 100px;
+            height: auto;
+            margin-right: 20px;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        /* Conteneur pour l'image zoomée (au premier plan) */
+        .zoomed-img {
+            position: absolute;
+            z-index: 100;
+            pointer-events: none; /* Permet à la souris de passer "à travers" */
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Espace réservé pour éviter les sauts de layout */
+        .recommendation {
+            min-height: 120px;
+        }
+
+
+
+        /* Espace réservé pour éviter les sauts de layout */
+        .recommendation {
+            min-height: 120px;
+        }
+
+
+
+
+   
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Recommandations culturelles</h1>
+    </header>
+
+    <div class="recommendations-container">
+        <!-- Livres -->
+        <div class="category">
+            <h2>Livres</h2>
+            <div class="recommendation">
+                <img src="L_Arbre_monde.jpg" alt="Couverture du livre">
+                <div class="recommendation-content">
+                    <h3>L'arbre monde</h3>
+                    <p>Richard Power - Un roman passionant, dans lequel on suit le destin de nombreux personnages, liés sans le savoir à travers les arbres.</p>
+                </div>
+            </div>
+            <div class="recommendation">
+                <img src="vie_secrete.jpeg" alt="Couverture du livre">
+                <div class="recommendation-content">
+                    <h3>La vie secrète des arbres</h3>
+                    <p> Peter Wohlleben - Un livre qui raconte l'histoire et la vie des arbres, souvent méconnue. On y apprend entre autre que les arbres peuvent compter, communiquer et mémoriser...</p>
+                </div>
+            </div>
+            <div class="recommendation">
+                <img src="giono.jpeg" alt="Couverture du livre">
+                <div class="recommendation-content">
+                    <h3>L'homme qui plantait des arbres</h3>
+                    <p> Jean Giono - Le récit d'un berger qui plante des arbres pour faire revivre sa région. Poétique, écologiste et humaniste.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Films -->
+        <div class="category">
+            <h2>Films</h2>
+            <div class="recommendation">
+                <img src="intelligence.jpeg" alt="Affiche du film">
+                <div class="recommendation-content">
+                    <h3>L'intelligence des arbres </h3>
+                    <p>Julia Dordel et Guido Tölke - D'après le livre de Peter Wohlleben, un documentaire pour aller plus loin. Encore une fois, on en apprend beaucoup.</p>
+                </div>
+            </div>
+            <div class="recommendation">
+                <img src="iletaitforet.jpg" alt="Affiche du film">
+                <div class="recommendation-content">
+                    <h3>Il était une forêt</h3>
+                    <p>Luc Jacquet - Une forêt tropicale va naître sous nos yeux, à travers 7 siècles. Une plongée dans le monde sauvage et les liens cachés entre plantes et animaux.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Spectacle vivant -->
+        <div class="category">
+            <h2>Spectacle vivant</h2>
+            <div class="recommendation">
+                <img src="les_cimes.jpg" alt="Affiche de la pièce">
+                <div class="recommendation-content">
+                    <h3>Les cimes</h3>
+                    <p>Collectif minuit 12 - Initiallement crée au musée d'Orsay, cette pièce explore les notions de conservation muséale et forestière. Les danseuses donnent vie à la forêt, qui s'anime et se métamorphose.</p>
+                </div>
+            </div>
+        </div>
+
+        <a href="index.html" class="back-button">Retour à l'accueil</a>
+    </div>
+
+    <footer>
+        <p>Projet de programmation par Julia Sireyjol, SMD3, Université PSL | L'objectif de ce site est de présenter quelques informations intéressantes sur les arbres, il n'est en aucun cas exhaustif sur le sujet </p>
+    </footer>
+</body>
+</html>
