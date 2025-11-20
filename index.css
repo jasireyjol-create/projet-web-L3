@@ -1,0 +1,309 @@
+
+/*PAGE ACCUEIL*/
+
+/* Exemple CSS */
+.header-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    color: #2e7d32;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+}
+
+.icon-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #2e7d32;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.7);
+    background-color: white;
+    padding: 5px 10px; /* Ajoute un peu d'espace autour du texte pour un meilleur rendu */
+    display: block; /* Permet de ne pas prendre toute la largeur */
+    width: 100%; /* Prend toute la largeur disponible dans le conteneur flex */
+    margin-top: 10px; /* Espace entre l'image et le titre */
+    border-radius: 4px; /* Optionnel : arrondit légèrement les coins */
+    margin-bottom: 5px; /* Optionnel : espace en bas du titre */
+}
+
+.icon-description {
+    font-size: 1rem;
+    color: #4a7a4a;
+    line-height: 1.4;
+}
+
+
+
+body {
+    background-image: url('DSCF6308.JPG');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('DSCF6308.JPG');
+    background-size: cover;
+    z-index: -1; /* Place l'image derrière le contenu */
+    filter: brightness(1.15); /* Augmente la luminosité (1 = normal, >1 = plus clair) */
+}
+/* Style pour le header */
+header {
+    background-color: rgba(238, 238, 238, 0.829); /* Fond semi-transparent (optionnel) */
+    color: seagreen; /* Couleur du texte */
+    text-align: center; /* Centre le texte horizontalement */
+    padding: 20px 0; /* Espacement interne (haut/bas, gauche/droite) */
+    width: 100%; /* Prend toute la largeur de la page */
+    position: relative; /* Pour le positionnement */
+    margin-bottom: 20px; /* Espace sous le header */
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif; /* Nom de la police Google Fonts */
+    font-weight: 700;
+    font-size: 5em;
+    color: seagreen;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Ombre pour améliorer la lisibilité */
+}
+
+
+/* Conteneur pour centrer les icônes sur la page */
+.icons-container {
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    min-height: calc(100vh - 200px); /* Prend la hauteur de l'écran (moins l'espace du header) */
+    width: 100%; /* Prend toute la largeur */
+}
+
+/* Style pour les icônes (inchangé, mais consolidé) */
+
+.crumb {
+    display: flex;
+    flex-direction: column; /* Empile les éléments verticalement */
+    align-items: center; /* Centre horizontalement les éléments enfants */
+    text-align: center; /* Centre le texte (titre et description) */
+    margin: 10px; /* Espace autour de chaque "crumb" */
+}
+
+.crumbs ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 80px;
+    justify-content: center;
+    align-items: center;
+}
+.crumb a {
+    display: flex;
+    flex-direction: column; /* Empile l'image et le titre/description verticalement */
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+    width: auto; /* Largeur automatique pour ne pas s'étirer */
+}
+
+.crumb a:hover {
+    background-color: rgba(255, 255, 255, 0.9); /* Fond plus opaque au survol */
+    transform: scale(1.05);
+}
+.crumb img {
+    width: 100px;
+    height: 100px;
+    transition: transform 0.3s;
+    drop-shadow(2px 2px 2px rgb(247, 245, 245));
+}
+
+.crumb img:hover {
+    transform: scale(1.1);
+    filter: invert(26%) sepia(98%) saturate(717%) hue-rotate(348deg) brightness(90%) contrast(100%)
+             drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.4));
+}
+
+
+/*ESPECES*/
+<style>
+        /* Styles spécifiques à cette page */
+        body {
+            background-image: url('DSCF6308.JPG');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('DSCF6308.JPG');
+            background-size: cover;
+            z-index: -1;
+            filter: brightness(1.15);
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 20px;
+            margin-bottom: 30px;
+            background-color: rgba(238, 238, 238, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            margin: 20px auto;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: #2e7d32;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #4a7a4a;
+            max-width: 700px;
+            margin: 10px auto;
+            line-height: 1.6;
+        }
+
+        .trees-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .tree-card {
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .tree-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .tree-image {
+            height: 220px;
+            width: 100%;
+            object-fit: cover;
+            border-bottom: 3px solid rgba(46, 125, 50, 0.3);
+        }
+
+        .tree-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .tree-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #2e7d32;
+        }
+
+        .tree-scientific {
+            font-style: italic;
+            color: #4a7a4a;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .tree-button {
+            display: inline-block;
+            padding: 10px 25px;
+            background: linear-gradient(45deg, #4caf50, #2e7d32);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .tree-button:hover {
+            background: linear-gradient(45deg, #5cd65c, #319437);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .tree-button i {
+            margin-right: 8px;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #2e7d32;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #1b5e20;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            color: #4a7a4a;
+            font-size: 0.9rem;
+            background-color: rgba(238, 238, 238, 0.7);
+            border-radius: 10px;
+            max-width: 900px;
+            margin: 20px auto;
+        }
+
+        @media (max-width: 768px) {
+            .trees-container {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 480px) {
+            .trees-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
